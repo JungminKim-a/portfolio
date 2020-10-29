@@ -1,0 +1,54 @@
+*{
+	margin:0 auto;
+	height: 2000px;
+}
+#topMenu{
+	position: absolute;
+	width:100%;
+	margin:0 auto;
+	height: 770px;
+	top: 0px;
+	left: 0px;
+	background-color: #d9e4dd;
+}
+.title{
+	position: relative;
+	width: 500px;
+	height: 100px;
+	margin : auto;
+	display : block;
+	top:320px;
+}
+.icon{
+	position: relative;
+	display : block;
+	margin : auto;
+	width: 100px;
+	height: 100px;
+	top:550px;
+	background-image: url( "./../img/icon.png");
+	background-repeat: no-repeat;
+	animation: scrollIcon 1.5s infinite;
+	
+}
+#profile{
+	position: absolute;
+	width:100%;
+	margin:0 auto;
+	height: 800px;
+	top: 1820px;
+	left: 0px;
+	background-color: #cdc9c3;
+}
+
+@keyframes scrollIcon{
+	0%, 100% {
+    transform: translateY(0);
+	}
+	50% {
+	    transform: translateY(-10px);
+	}
+	90% {
+	    transform: translateY(2px);
+	}
+}
