@@ -1,6 +1,28 @@
-*{
-	margin:0 auto;
-	height: 2000px;
+body {
+/*padding-top: 80px;*/
+}
+
+#container {
+    margin: 0 auto;
+}
+#contents{
+	margin: 0;
+    padding: 0;
+    font-family: inherit;
+    font-style: normal;
+    font-weight: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+    vertical-align: top;
+    outline: none;
+}
+body{font-family:'서울남산체', 'SeoulNamsanM', sn}
+@font-face {
+    font-family: 'SeoulNamsanM';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/SeoulNamsanM.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 #topMenu{
 	position: absolute;
@@ -9,12 +31,12 @@
 	height: 770px;
 	top: 0px;
 	left: 0px;
-	background-color: #d9e4dd;
+	background-color: #ffffff;
 }
 .title{
 	position: relative;
-	width: 500px;
-	height: 100px;
+	width: 700px;
+	height: 200px;
 	margin : auto;
 	display : block;
 	top:320px;
@@ -25,22 +47,219 @@
 	margin : auto;
 	width: 100px;
 	height: 100px;
-	top:550px;
-	background-image: url( "./../img/icon.png");
+	top:440px;
+/*	background-image: url( "./../img/scroll.svg") no-repeat;*/
 	background-repeat: no-repeat;
 	animation: scrollIcon 1.5s infinite;
 	
 }
+
+/*navi*/
+
+
+
+
+#navi{
+	position: fixed;
+	width: 100%;
+	height: 80px;
+	left: 0;
+	top:0;
+	z-index: 1;
+	transition: top 0.2s ease-in-out;
+	background-color: #4f8a8b;
+}
+.naviUp {
+	top: -80px;
+}
+.naviDown {
+	top: 0px;
+}
+
+
+.navi{
+	float: left;
+/*	height: 80px;*/
+	width:33.3%;
+	text-align:center;
+	line-height:80px;
+
+	cursor: pointer;
+}
+.navi:hover{
+	background-color: #222831;
+}
+.active{
+	background-color: #222831;
+}
+.navi a{
+	text-decoration:none;
+	font-size: 30px;
+	color: #eeeeee;
+	display: block;
+}
+
+/*navi*/
+
+/*Profile1*/
 #profile{
 	position: absolute;
 	width:100%;
 	margin:0 auto;
-	height: 800px;
-	top: 1820px;
+	height: 1260px;
+	top: 770px;
 	left: 0px;
-	background-color: #cdc9c3;
+	background-color: #fbf7f0;
+}
+.titleName{
+	position: absolute;
+	color: #cdc9c3;	
+	border: 2px solid;
+	border-radius: 25px;
+	padding: 10px;
+	top:144px;
+	left: 93px;
+	font-size: 1.5em;
+}
+.section{
+	position: absolute;
+	top:230px;
+	left: 90px;
+}
+.section2,.section4{
+	left: 320px;
+}
+.section3,.section4{
+	top: 660px;
+	float: right;
+}
+.section div{
+	position: relative;
+	margin-top:30px;
+	color: #555555;
+	font-size: 24px;	
+}
+.adobeLogo{
+	width: 50px;
+	height: 50px;
+	float: right;
+	margin-top: -13px;
+	margin-left: 30px;
 }
 
+
+
+#Premier_box{
+	position: absolute;
+	width:100%;
+	margin:0 auto;
+	height: 1380px;
+	top: 2030px;
+	left: 0px;
+	background-color: #555555;
+}
+#Premier{
+	display: block;
+	position: relative;
+	top: 200px;
+}
+
+
+#Premier > li{
+	white-space:nowrap;
+	border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    width: 270px;
+    height: 500px;
+    background-color: #fbf7f0;
+    display: inline-block;
+    margin-left: 15px;
+    margin-top: 45px;
+}
+
+li p{
+	position: absolute;
+	top: 500px;
+	color: #d9e4dd;
+}
+
+li img{
+	width: 270px;
+	height: 500px;
+}
+
+#pop{
+	position: fixed;
+	width: 100%;
+	height:1000px;
+	top:0;
+	left: 0;
+	background-color: rgba(0,0,0, .5);
+	z-index: 2;
+	display: none;
+}
+.pop{
+	position: relative;
+	margin: 100px auto;
+	width: 900px;
+	height: 741px;
+}
+
+.pop img{
+	position: relative;
+	width: 400px;
+	height: 741px;
+	top: 0px;
+	left: 0px;
+	float: left;
+	/*left: */
+}
+.pop_txt_bg{
+	position: relative;	
+	width: 500px;
+	height: 741px;
+	top: 0px;
+	right: 0px;
+	float: left;
+	background-color:#fbf7f0;
+}
+.pop_txt_bg span{
+	background: linear-gradient(to top, #d9e4dd 50%, transparent 50%);
+	
+}
+.pop_title{
+	position: relative;
+	top: 60px;
+	left: 20px;
+	font-size: 20px;
+	font-family: Noto Sans regular;
+	display: none;	
+	float: left;
+}
+.pop_txt{
+	position: relative;
+	padding: 30px;
+	top: 80px;
+	left: 0px;
+	font-size: 20px;
+	font-family: Noto Sans regular;
+	display: none;
+}
+.pop_x{
+	position: relative;	
+	width: 70px;
+    height: 70px;
+    font-size: 2.5em;
+    cursor: pointer;
+    text-align: center;
+    line-height: 70px;
+	top: 0px;
+	right: 0px;
+	float: right;
+	color:#cdc9c3;
+}
+/*afterEffects*/
 @keyframes scrollIcon{
 	0%, 100% {
     transform: translateY(0);
