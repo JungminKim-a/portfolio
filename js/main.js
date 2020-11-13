@@ -1,4 +1,9 @@
-$('#Premier li').on('click',function(){
+$(".navi").on('click',function(){
+    $(this).addClass('active');
+    $(this).siblings().removeClass('active');
+})
+
+$('#motion li').on('click',function(){
     $('#pop').css('display','block');
     var imgNum = $(this).index()+1;
     var colorNum = [
@@ -28,7 +33,7 @@ $(".pop_x").mouseout(function(){
 })
 
 
-$('#Premier li img').mouseover(function(){
+$('#motion li img').mouseover(function(){
   var imgSrc = $(this).attr('src');
         // $(this).attr( 'src', replace( '.png', '.gif' ) );
         var $t=$(this), txt =$t.attr('src');
@@ -40,7 +45,7 @@ $('#Premier li img').mouseover(function(){
          $t.attr( 'src', txt );
 });
 
-$('#Premier li img').mouseout(function(){
+$('#motion li img').mouseout(function(){
   var imgSrc = $(this).attr('src');
         // $(this).attr( 'src', replace( '.png', '.gif' ) );
         var $t=$(this), txt =$t.attr('src');
@@ -51,3 +56,7 @@ $('#Premier li img').mouseout(function(){
          }
          $t.attr( 'src', txt );
 });
+
+$('#afterEffects li').on('click',function(){
+    $('#pop2').css('display','block');
+})
