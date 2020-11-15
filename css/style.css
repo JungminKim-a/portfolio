@@ -1,15 +1,16 @@
 body {
-margin: 0;
-padding: 0;
+	margin: 0;
+	padding: 0;
+	/*fontpremier-family:'서울남산체', 'SeoulNamsanM', sn*/
 }
-
-body{font-family:'서울남산체', 'SeoulNamsanM', sn}
 @font-face {
     font-family: 'SeoulNamsanM';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/SeoulNamsanM.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
+
+/*top*/
 #topMenu{
 	position: absolute;
 	width:100%;	
@@ -33,67 +34,95 @@ body{font-family:'서울남산체', 'SeoulNamsanM', sn}
 	width: 100px;
 	height: 100px;
 	top:440px;
-/*	background-image: url( "./../img/scroll.svg") no-repeat;*/
 	background-repeat: no-repeat;
 	animation: scrollIcon 1.5s infinite;
 	
 }
+/*top*/
 
 /*navi*/
-
-
-
-
-#navi{
+#navi1{
 	position: fixed;
 	width: 100%;
 	height: 50px;
 	left: 0;
 	top:0;
 	z-index: 1;
-	/*transition: top 0.2s ease-in-out;*/
 	background-color: #fff;
 }
-.naviUp {
-	top: -50px;
+#navi2{
+	position: fixed;
+	width: 100%;
+	height: 50px;
+	left: 0;
+	top:50px;
+	z-index: 1;
+	background-color: #fbf7f0;
+	display: none;
 }
-.naviDown {
-	top: 0px;
-}
-
-
-.navi{
+.navi1{
 	float: left;
-/*	height: 80px;*/
 	width:33.3%;
 	text-align:center;
 	line-height:50px;
-
 	cursor: pointer;
 }
-.navi:hover,
-.navi1.active{
+.navi2{
+	float: left;
+	width:33.3%;
+	text-align:center;
+	line-height:50px;
+	cursor: pointer;
+}
+.navi1:hover,
+.navi1_1.active{
 	background-color: #fbf7f0;
 }
-.navi2.active{
+.navi1_2.active{
 	background-color: #555555;
 }
-.navi3.active{
-	background-color: #fff;
+.navi1_3.active{
+	background-color: #fbf7f0;
 }
-.navi a{
+.navi1 a{
 	text-decoration:none;
 	font-size: 22px;
 	color: #555;
 	display: block;
 }
-.navi1.active a{
+.navi1_1.active a{
 	color: #555555;
 }
-.navi2.active a{
+.navi1_2.active a{
 	color: #fbf7f0;
 }
-.navi3.active a{
+.navi1_3.active a{
+	color: #555555;
+}
+
+.navi2:hover,
+.navi2_1.active{
+	background-color: #fbf7f0;
+}
+.navi2_2.active{
+	background-color: #555555;
+}
+.navi2_3.active{
+	background-color: #fbf7f0;
+}
+.navi2 a{
+	text-decoration:none;
+	font-size: 22px;
+	color: #555;
+	display: block;
+}
+.navi2_1.active a{
+	color: #555555;
+}
+.navi2_2.active a{
+	color: #fbf7f0;
+}
+.navi2_3.active a{
 	color: #555555;
 }
 
@@ -155,7 +184,8 @@ body{font-family:'서울남산체', 'SeoulNamsanM', sn}
 }
 /*experience*/
 
-#motion_box{
+#AfterEffects_box,
+#premier_box{
 	position: relative;
 	max-width:100%;
 	margin:0;
@@ -164,8 +194,13 @@ body{font-family:'서울남산체', 'SeoulNamsanM', sn}
 	padding-bottom: 300px;
 
 }
-#motion,
-#afterEffects{
+#premier_box{
+	background-color: #fbf7f0;
+	top:-15px;
+}
+#AfterEffects,
+#premier,
+.Premier{
 	display: flex;
 	flex-wrap: wrap;
 	align-content: space-around;
@@ -175,38 +210,58 @@ body{font-family:'서울남산체', 'SeoulNamsanM', sn}
 	padding: 0px 25px;
 	top: 200px;
 }
-
-#motion > li{
-	/*white-space:nowrap;*/
+.Premier{
+	margin: 0;
+	padding: 0;
+	top: 0px;
+}
+#AfterEffects > li{
 	border-radius: 8px;
     overflow: hidden;
     cursor: pointer;
     width: 270px;
     height: 500px;
-    background-color: #fbf7f0;
     margin-bottom: 25px;
 }
-
-#afterEffects > li{
-	/*position: relative;*/
-	border-radius: 8px;
-	overflow: hidden;
-    cursor: pointer;
-
+#AfterEffects li img{
+	width: 270px;
+	height: 500px;
 }
 
+.Premier li{
+    overflow: hidden;
+    width: 300px;
+    height: 169px;
+    margin-bottom: 5px;
+}
+
+#premier > li{
+/*	border-radius: 8px;*/
+	overflow: hidden;
+    cursor: pointer;
+    width: 911px;
+    height: 512px;
+    margin-bottom: 25px;
+    
+}
+#premier div{
+	margin-bottom:120px;
+	background-color: 000;
+}
+ul{ list-style:none; }
 li p{
 	position: absolute;
 	top: 500px;
 	color: #d9e4dd;
 }
-
-li img{
-	width: 270px;
-	height: 500px;
+#premier .pop_title{
+	font-size: 22px;
 }
 
-#pop,#pop2{
+
+/*pop*/
+
+#pop{
 	position: fixed;
 	width: 100%;
 	height:100%;
@@ -225,17 +280,18 @@ li img{
 	transform: translate(-50%, -50%);
 	width: 900px;
 	height: 741px;
+	display: none;
 }
 .pop2{
-	display: flex;
-	position: absolute;
-	top: 50%;
-  	left: 50%;
-	transform: translate(-50%, -50%);
 	width: 1100px;
 	height: 450px;
+	z-index: 4;
+	display: none;
 }
-
+.pop3{
+	width: 920px;
+	height: 700px;
+}
 .pop img{
 	position: relative;
 	width: 400px;
@@ -243,9 +299,17 @@ li img{
 	top: 0px;
 	left: 0px;
 	float: left;
-	/*left: */
 }
-.pop_txt_bg{
+.Premier{
+	position: relative;	
+	width: 911px;
+	height: 512px;
+	top: 0px;
+	right: 0px;
+	float: left;
+	background-color:#fbf7f0;
+}
+.pop .pop_txt_bg{
 	position: relative;	
 	width: 500px;
 	height: 741px;
@@ -254,20 +318,10 @@ li img{
 	float: left;
 	background-color:#fbf7f0;
 }
-.pop_txt_bg span{
-	background: linear-gradient(to top, #d9e4dd 50%, transparent 50%);
-	
+.pop .pop_txt_bg span{
+	background: linear-gradient(to top, #d9e4dd 50%, transparent 50%);	
 }
-.pop_txt_bg2{
-	position: relative;	
-	width: 300px;
-	height: 450px;
-	top: 0px;
-	right: 0px;
-	float: left;
-	background-color:#fbf7f0;
-}
-.pop_title{
+.pop .pop_title{
 	position: relative;
 	top: 60px;
 	left: 20px;
@@ -276,7 +330,19 @@ li img{
 	display: none;	
 	float: left;
 }
-.pop_txt{
+#premier .pop_title{
+	position: relative;
+	float: left;
+	top: 10px;
+	left: 10px;
+	display: flex;
+	flex-wrap: wrap;
+	/*align-content: space-around;*/
+	/*align-items:flex-start;*/
+	/*flex-direction: column;*/
+	/*justify-content: space-around;*/
+}
+.pop .pop_txt{
 	position: relative;
 	padding: 30px;
 	top: 80px;
@@ -297,6 +363,22 @@ li img{
 	right: 0px;
 	float: right;
 	color:#cdc9c3;
+	z-index: 3;
+}
+
+.Premier img{
+	position: relative;
+	width: 300px;
+	height: 169px;
+	top: 0px;
+	left: 0px;
+	float: left;
+}
+#premier .pop_txt{
+	margin-top: 40px;
+}
+#premier div{
+	background-color: 000;
 }
 /*afterEffects*/
 @keyframes scrollIcon{
