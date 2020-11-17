@@ -2,72 +2,100 @@ $(".navi1").on('click',function(){
     $(this).addClass('active');
     $(this).siblings().removeClass('active');
 })
+
+//////////////////////////////////////////////////////////////////////////
+
+$('.page-indicator > ul > li > a').click(function(e) {
+    var href = $(this).attr('href');
+    
+    var targetTop = $(href).offset().top;
+    
+    
+    $('html').stop().animate({scrollTop:targetTop}, 300);
+    
+    e.preventDefault();
+});
+
+function Page__updateIndicatorActive() {
+    var scrollTop = $(window).scrollTop();
+    
+
+    $($('.page').get().reverse()).each(function(index, node) {
+        var $node = $(this);
+        var offsetTop = parseInt($node.attr('data-offset-top'));
+        
+        if ( scrollTop >= offsetTop ) {
+
+            $('.page-indicator > ul > li > a.active').removeClass('active');
+
+            
+            var currentPageIndex = $node.index();
+            $('.page-indicator > ul > li > a').eq(currentPageIndex).addClass('active');
+            
+            $('html').attr('data-current-page-index', currentPageIndex);
+            
+            return false;
+        }
+    });
+}
+
+function Page__updateOffsetTop() {
+    
+    $('.page').each(function(index, node) {
+        var $page = $(node);
+        var offsetTop = $page.offset().top;
+        
+        $page.attr('data-offset-top', offsetTop);
+    });
+    
+    Page__updateIndicatorActive();
+}
+
+function Page__init() {
+    Page__updateOffsetTop();
+}
+
+Page__init();
+
+$(window).resize(Page__updateOffsetTop);
+
+$(window).scroll(Page__updateIndicatorActive);
+
+//////////////////////////////////////////////////////////////////////////
+
 $(function(){
   var navi1 = $('.navi1_1');
   var navi2 = $('.navi1_2');
   var navi3 = $('.navi1_3');
 
-  var navi2_1 = $('.navi2_1');
-  var navi2_2 = $('.navi2_2');
-  var navi2_3 = $('.navi2_3')
-
   var profile = $('#profile');
   var afterEffects = $('#AfterEffects_box');
   var premier = $('#premier_box');
 
-  var a = $('#a');
-  var b = $('#b');
-  var c = $('#c');
-   //색상이 변할 부분
   var profileOffsetTop = profile.offset().top;
   var afterEffectsOffsetTop = afterEffects.offset().top;
   var premierOffsetTop = premier.offset().top;
 
-  var aOffsetTop = a.offset().top;
-  var bOffsetTop = b.offset().top;
-  var cOffsetTop = c.offset().top;
-   //색상 변할 부분의 top값 구하기
 
   $(window).resize(function(){ //반응형을 대비하여 리사이즈시 top값을 다시 계산
     profileOffsetTop = profile.offset().top;
     afterEffectsOffsetTop = afterEffects.offset().top;
     premierOffsetTop = premier.offset().top;
 
-    aOffsetTop = a.offset().top;
-    bOffsetTop = b.offset().top;
-    cOffsetTop = c.offset().top;
   });
-  
-    // $(window).on('scroll', function(){
-    //     if($(window).scrollTop() >= profileOffsetTop) { // 스크롤이 page보다 밑에 내려가면
-    //         if($(window).scrollTop() >= afterEffectsOffsetTop){
-    //             if($(window).scrollTop() >= premierOffsetTop){
-    //                 navi3.addClass('active');
-    //             }else{
-    //                navi3.removeClass('active'); 
-    //             }                    
-    //             navi2.addClass('active');
-    //         }else{
-    //             navi2.removeClass('active');
-    //         }
-    //         navi1.addClass('active'); //클래스 추가
-    //     } else { // 스크롤 올릴 때
-    //         navi1.removeClass('active'); //클래스 제거
-    //     }
-    // });
 
         $(window).on('scroll', function(){
             if($(window).scrollTop() >= profileOffsetTop) {
                 navi1.addClass('active');
                 navi2.removeClass('active');
-                $('#navi2').css('display','none');
+                $('.page-indicator').css('display','none');
                 if($(window).scrollTop() >= afterEffectsOffsetTop){
                     navi2.addClass('active');
                     navi1.removeClass('active');
                     navi3.removeClass('active');
-                    $('#navi2').css('display','none');
+                    $('.page-indicator').css('display','none');
                     if($(window).scrollTop() >= premierOffsetTop){
-                        $('#navi2').css('display','block');
+                        $('.page-indicator').css('display','block');
                         navi3.addClass('active');
                         navi2.removeClass('active');
                     }
@@ -77,23 +105,6 @@ $(function(){
             }
         });
 
-        $(window).on('scroll', function(){
-            if($(window).scrollTop() >= aOffsetTop) {
-                navi2_1.addClass('active');
-                navi2_2.removeClass('active');
-                if($(window).scrollTop() >= bOffsetTop){
-                    navi2_2.addClass('active');
-                    navi2_1.removeClass('active');
-                    navi2_3.removeClass('active');
-                    if($(window).scrollTop() >= cOffsetTop){
-                        navi2_3.addClass('active');
-                        navi2_2.removeClass('active');
-                    }
-                }
-            } else {
-                navi2_1.removeClass('active');
-            }
-        });
 
 });
 
@@ -154,3 +165,4 @@ $('#AfterEffects li img').mouseout(function(){
          }
          $t.attr( 'src', txt );
 });
+
