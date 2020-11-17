@@ -1,11 +1,23 @@
 body {
 	margin: 0;
 	padding: 0;
-	/*fontpremier-family:'서울남산체', 'SeoulNamsanM', sn*/
+	font-family: 'TmoneyRoundWindRegular';
 }
 @font-face {
     font-family: 'SeoulNamsanM';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/SeoulNamsanM.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'TmoneyRoundWindExtraBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/TmoneyRoundWindExtraBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'TmoneyRoundWindRegular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/TmoneyRoundWindRegular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -50,26 +62,9 @@ body {
 	z-index: 1;
 	background-color: #fff;
 }
-#navi2{
-	position: fixed;
-	width: 100%;
-	height: 50px;
-	left: 0;
-	bottom:0;
-	z-index: 1;
-	background-color: #fbf7f0;
-	display: none;
-}
 .navi1{
 	float: left;
 	width:33.3%;
-	text-align:center;
-	line-height:50px;
-	cursor: pointer;
-}
-.navi2{
-	float: left;
-	width:14%;
 	text-align:center;
 	line-height:50px;
 	cursor: pointer;
@@ -160,6 +155,7 @@ html[data-current-page-index="0"] .page-indicator {
 	top:100px;
 	left: 93px;
 	font-size: 1.5em;
+	font-family: 'TmoneyRoundWindExtraBold';
 }
 .section{
 	position: absolute;
@@ -182,7 +178,7 @@ html[data-current-page-index="0"] .page-indicator {
 	position: relative;
 	margin-top:30px;
 	color: #555555;
-	font-size: 24px;	
+	font-size: 1.3em;	
 }
 .adobeLogo{
 	width: 50px;
@@ -196,6 +192,9 @@ html[data-current-page-index="0"] .page-indicator {
 	position: relative;
 }
 /*experience*/
+#premier p{
+	font-size: 1.3em;
+}
 
 #AfterEffects_box,
 #premier_box{
@@ -269,7 +268,14 @@ li p{
 	color: #d9e4dd;
 }
 #premier .pop_title{
-	font-size: 22px;
+	position: relative;
+	float: left;
+	top: 10px;
+	left: 10px;
+	display: flex;
+	flex-wrap: wrap;
+	font-size: 25px;
+	font-family: 'TmoneyRoundWindExtraBold';
 }
 
 
@@ -340,29 +346,16 @@ li p{
 	top: 60px;
 	left: 20px;
 	font-size: 20px;
-	font-family: Noto Sans regular;
 	display: none;	
 	float: left;
 }
-#premier .pop_title{
-	position: relative;
-	float: left;
-	top: 10px;
-	left: 10px;
-	display: flex;
-	flex-wrap: wrap;
-	/*align-content: space-around;*/
-	/*align-items:flex-start;*/
-	/*flex-direction: column;*/
-	/*justify-content: space-around;*/
-}
+
 .pop .pop_txt{
 	position: relative;
 	padding: 30px;
 	top: 80px;
 	left: 0px;
 	font-size: 20px;
-	font-family: Noto Sans regular;
 	display: none;
 }
 .pop_x{
