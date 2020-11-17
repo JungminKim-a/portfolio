@@ -55,7 +55,7 @@ body {
 	width: 100%;
 	height: 50px;
 	left: 0;
-	top:50px;
+	bottom:0;
 	z-index: 1;
 	background-color: #fbf7f0;
 	display: none;
@@ -69,7 +69,7 @@ body {
 }
 .navi2{
 	float: left;
-	width:33.3%;
+	width:14%;
 	text-align:center;
 	line-height:50px;
 	cursor: pointer;
@@ -100,32 +100,45 @@ body {
 	color: #555555;
 }
 
-.navi2:hover,
-.navi2_1.active{
-	background-color: #fbf7f0;
-}
-.navi2_2.active{
-	background-color: #555555;
-}
-.navi2_3.active{
-	background-color: #fbf7f0;
-}
-.navi2 a{
-	text-decoration:none;
-	font-size: 22px;
-	color: #555;
-	display: block;
-}
-.navi2_1.active a{
-	color: #555555;
-}
-.navi2_2.active a{
-	color: #fbf7f0;
-}
-.navi2_3.active a{
-	color: #555555;
+.page-indicator {
+	position:fixed;
+	top:50%;
+	left: 20px;
+	width: 250px;
+	height:auto;
+	z-index: 3;
+	transform: translateY(-50%);
+    transition:transform 0.3s;
+    display: none;
 }
 
+.page-indicator ul li a.active {
+    color: #fbf7f0;
+	background-color: #555555;
+}
+.page-indicator ul li {
+	margin-top: 20px;
+	position:relative;
+	width: 250px;
+	float: left;
+	height:30px;
+	color: #d9e4dd;
+	cursor: pointer;
+	z-index: 5;
+	text-decoration: disc;
+}
+.page-indicator ul li a{
+	margin-left:-30px;
+	padding: 7px;
+	border-radius: 50px;
+	background-color: #cdc9c3;
+	color: #fbf7f0;
+	text-decoration: none;
+}
+
+html[data-current-page-index="0"] .page-indicator {
+    transform:translateY(0);
+}
 /*navi*/
 
 /*Profile1*/
@@ -245,7 +258,8 @@ body {
     
 }
 #premier div{
-	margin-bottom:120px;
+	padding-top:50px; 
+	/*margin-bottom:120px;*/
 	background-color: 000;
 }
 ul{ list-style:none; }
@@ -304,7 +318,7 @@ li p{
 	position: relative;	
 	width: 911px;
 	height: 512px;
-	top: 0px;
+	top: -50px;
 	right: 0px;
 	float: left;
 	background-color:#fbf7f0;
