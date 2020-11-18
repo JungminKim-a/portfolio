@@ -70,17 +70,17 @@ $(function(){
 
   var profile = $('#profile');
   var afterEffects = $('#AfterEffects_box');
-  var premier = $('#premier_box');
+  var premiere = $('#premiere_box');
 
   var profileOffsetTop = profile.offset().top;
   var afterEffectsOffsetTop = afterEffects.offset().top;
-  var premierOffsetTop = premier.offset().top;
+  var premiereOffsetTop = premiere.offset().top;
 
 
   $(window).resize(function(){ //반응형을 대비하여 리사이즈시 top값을 다시 계산
     profileOffsetTop = profile.offset().top;
     afterEffectsOffsetTop = afterEffects.offset().top;
-    premierOffsetTop = premier.offset().top;
+    premiereOffsetTop = premiere.offset().top;
 
   });
 
@@ -94,7 +94,7 @@ $(function(){
                     navi1.removeClass('active');
                     navi3.removeClass('active');
                     $('.page-indicator').css('display','none');
-                    if($(window).scrollTop() >= premierOffsetTop){
+                    if($(window).scrollTop() >= premiereOffsetTop){
                         $('.page-indicator').css('display','block');
                         navi3.addClass('active');
                         navi2.removeClass('active');
