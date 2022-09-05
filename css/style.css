@@ -160,7 +160,7 @@ html[data-current-page-index="0"] .page-indicator {
 .section{
 	position: absolute;
 	top:230px;
-	left: 90px;
+	left: 90px; 
 }
 .section2,.section4, .section6{
 	left: 320px;
